@@ -113,3 +113,60 @@
 .listItemsImg {
   margin: 1rem;
 }
+
+.chat img {
+  height: 2.5rem;
+  border-radius: 50%;
+}
+
+/* MAIN */
+
+.main {
+  min-height: calc(100vh - 19rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 6rem 10rem;
+}
+
+.chat-footer {
+  margin-top: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.chat p {
+  font-size: 0.9rem;
+  font-weight: 200;
+}
+
+.input-container {
+  padding: 0.5rem;
+  background: #2f2f2f;
+  display: flex;
+  align-items: center;
+  border-radius: 15rem;
+  width: 50rem;
+}
+
+.input-container > input {
+  width: calc(100% - 3rem);
+  outline: none;
+  padding: 1rem;
+  color: white;
+}
+
+.input-container > input,
+.send {
+  background: transparent;
+  border: none;
+}
+
+.important-info {
+  font-size: 0.7rem;
+  color: gray;
+  margin-top: 0.5rem;
+}

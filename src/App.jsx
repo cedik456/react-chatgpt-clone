@@ -2,9 +2,10 @@ import "./App.css";
 import chatgptLogo from "./Assets/chatgpt.svg";
 import addBtn from "./Assets/add-30.png";
 import msgIcon from "./Assets/message.svg";
-import home from "./Assets/home.svg";
-import saved from "./Assets/bookmark.svg";
 import rocket from "./Assets/rocket.svg";
+import sendBtn from "./Assets/send.svg";
+import userIcon from "./Assets/image.webp";
+import gptUserLogo from "./Assets/chatgptLogo.svg";
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
             <h1>React Hooks Quiz Data</h1>
             <h1>React Custom Hooks Explanation</h1>
             <h1>Beginner Gym Program Plan</h1>
+            <h1>Beginner Gym Program Plan</h1>
           </div>
         </div>
         <div className="lowerSide">
@@ -59,9 +61,39 @@ function App() {
       </div>
 
       <div className="main">
-        <div className="header">
+        {/* <div className="header">
           <p>ChatGpt</p>
           <img src="" alt="" className="profile-pic" />
+        </div> */}
+
+        <div className="chat-container">
+          <div className="chat">
+            <img src={userIcon} alt="" />
+            <p className="txt">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
+              cupiditate accusamus, soluta sit dolore officia aut atque
+              voluptate! Quo, sapiente!
+            </p>
+          </div>
+          <div className="chat">
+            <img src={gptUserLogo} alt="" />
+            <p className="txt">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
+              cupiditate accusamus, soluta sit dolore officia aut atque
+              voluptate! Quo, sapiente!
+            </p>
+          </div>
+        </div>
+        <div className="chat-footer">
+          <div className="input-container">
+            <input type="text" placeholder="Message ChatGPT" />
+            <button className="send">
+              <img src={sendBtn} alt="" />
+            </button>
+          </div>
+          <p className="important-info">
+            ChatGPT can make mistakes. Check important info.
+          </p>
         </div>
       </div>
     </div>
