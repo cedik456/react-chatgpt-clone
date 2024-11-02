@@ -1,0 +1,115 @@
+.App {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  flex: 3;
+  background-color: #171717;
+}
+
+.main {
+  flex: 9;
+}
+
+.upperSide {
+  padding: 1.5rem;
+  height: 90%;
+}
+
+.logo {
+  height: 2rem;
+}
+
+.brand {
+  font-size: 1.2rem;
+}
+
+.upperSideTop {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+/* Button */
+
+.add-btn {
+  height: 1rem;
+  padding-right: 1rem;
+}
+
+.newChat-btn {
+  background: #212121;
+  color: white;
+  border: none;
+  padding: 1rem;
+  font-size: 0.9rem;
+  width: 20rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.query {
+  display: flex;
+  align-items: center;
+  background: transparent;
+  padding: 1rem;
+  width: 20rem;
+  margin: 1rem auto;
+  border-radius: 0.5rem;
+  border: 1px solid #212121;
+  color: white;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.query > img {
+  margin-right: 1rem;
+}
+
+.prev-conversation {
+  margin-left: 0.5rem;
+}
+
+.prev-conversation p {
+  font-size: 0.8rem;
+  margin-top: 3rem;
+  font-weight: 400;
+}
+
+.prev-conversation h1 {
+  font-size: 0.9rem;
+  font-weight: 300;
+  margin-top: 2rem;
+}
+
+.lowerSide {
+  padding: 1rem;
+  height: 10%;
+}
+
+.list-items {
+  /* margin: 0.75rem; */
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.list-items-contents h3 {
+  font-size: 0.9rem;
+}
+
+.list-items-contents p {
+  font-size: 0.7rem;
+  color: gray;
+}
+
+.listItemsImg {
+  margin: 1rem;
+}
