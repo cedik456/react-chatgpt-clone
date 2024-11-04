@@ -6,8 +6,31 @@ import rocket from "./Assets/rocket.svg";
 import sendBtn from "./Assets/send.svg";
 import userIcon from "./Assets/image.webp";
 import gptUserLogo from "./Assets/chatgptLogo.svg";
+import { sendMsgToAI } from "./openai";
+import { useState } from "react";
 
 function App() {
+  const [input, setInput] = useState("");
+  const [messages, setMessages] = useState([
+    {
+      text: "I am ChatGPT, a language model developed by OpenAI. I am designed to assist with a variety of tasks, including answering questions, providing explanations, and engaging in conversation.",
+      isBot: true,
+    },
+  ]);
+
+  const handleSend = async () => {
+    const text = input;
+    setInput("");
+    setMessages([...messages, { text, isBot: false }]);
+
+    const res = await sendMsgToAI(text);
+    setMessages([
+      ...messages,
+      { text, isBot: false },
+      { text: res, isBot: true },
+    ]);
+  };
+
   return (
     <div className="App">
       <div className="sidebar">
@@ -42,14 +65,6 @@ function App() {
           </div>
         </div>
         <div className="lowerSide">
-          {/* <div className="list-items">
-            <img src={home} alt="Home" className="listItemsImg" />
-            Home
-          </div>
-          <div className="list-items">
-            <img src={saved} alt="Saved" className="listItemsImg" />
-            Saved
-          </div> */}
           <div className="list-items">
             <img src={rocket} alt="Upgrade" className="listItemsImg" />
             <div className="list-items-contents">
@@ -67,27 +82,22 @@ function App() {
         </div> */}
 
         <div className="chat-container">
-          <div className="chat">
-            <img src={userIcon} alt="" />
-            <p className="txt">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
-              cupiditate accusamus, soluta sit dolore officia aut atque
-              voluptate! Quo, sapiente!
-            </p>
-          </div>
-          <div className="chat">
-            <img src={gptUserLogo} alt="" />
-            <p className="txt">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
-              cupiditate accusamus, soluta sit dolore officia aut atque
-              voluptate! Quo, sapiente!
-            </p>
-          </div>
+          {messages.map((message, i) => (
+            <div key={i} className={message.isBot ? "chat bot" : "chat"}>
+              <img src={message.isBot ? gptUserLogo : userIcon} alt="" />
+              <p className="txt">{message.text}</p>
+            </div>
+          ))}
         </div>
         <div className="chat-footer">
           <div className="input-container">
-            <input type="text" placeholder="Message ChatGPT" />
-            <button className="send">
+            <input
+              type="text"
+              placeholder="Message ChatGPT"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+            />
+            <button className="send" onClick={handleSend}>
               <img src={sendBtn} alt="" />
             </button>
           </div>
